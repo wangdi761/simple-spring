@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.isle</groupId>
+    <artifactId>simple-spring</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>simple-spring-web</module>
+        <module>simple-spring-service</module>
+        <module>simple-spring-dao</module>
+        <module>simple-spring-common</module>
+    </modules>
+
+
+    <properties>
+        <!--encoding-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!--test-->
+        <junit.version>4.11</junit.version>
+        <mockito.version>1.9.5</mockito.version>
+        <hamcrest.version>1.3</hamcrest.version>
+
+        <!--spring-->
+        <spring.version>4.0.7.RELEASE</spring.version>
+        <spring-security.version>3.2.0.RELEASE</spring-security.version>
+        <spring-ldap.version>2.0.1.RELEASE</spring-ldap.version>
+
+        <!--jsp-->
+        <jstl.version>1.2</jstl.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
+        <jsp-api.version>2.1</jsp-api.version>
+        <el-api.version>2.2.4</el-api.version>
+
+        <!--thymeleaf-->
+        <thymeleaf.version>2.1.3.RELEASE</thymeleaf.version>
+        <thymeleaf-extras-springsecurity3.version>2.1.1.RELEASE</thymeleaf-extras-springsecurity3.version>
+
+        <!--fileupload-->
+        <fileupload.version>1.3</fileupload.version>
+
+        <!--tiles-->
+        <tiles.version>3.0.3</tiles.version>
+
+        <!--log-->
+        <slf4j.version>1.7.5</slf4j.version>
+        <log4j.version>1.2.14</log4j.version>
+
+        <!--json-->
+        <jackson.version>2.3.0</jackson.version>
+        <fastjson.version>1.2.31</fastjson.version>
+        <jackson-databind.version>2.4.3</jackson-databind.version>
+
+        <!--utils-->
+        <commons-collections.version>3.2.2</commons-collections.version>
+        <commons-lang.version>3.1</commons-lang.version>
+
+        <!--mybatis-->
+        <mybatis.version>3.3.1</mybatis.version>
+        <mybatis-spring.version>1.3.0</mybatis-spring.version>
+
+        <!--druid-->
+        <druid.version>1.1.6</druid.version>
+
+        <!--hibernate-->
+        <hibernate-validator.version>5.0.1.Final</hibernate-validator.version>
+
+        <!--database-->
+        <mysql-connector-java.version>5.1.42</mysql-connector-java.version>
+        <c3p0.version>0.9.2.1</c3p0.version>
+        <h2.version>1.4.182</h2.version>
+
+        <!--plugin-->
+        <maven-source.version>1.7</maven-source.version>
+        <maven-target.version>1.7</maven-target.version>
+        <maven-jar-plugin.version>2.6</maven-jar-plugin.version>
+        <maven-surefire-plugin.version>2.18.1</maven-surefire-plugin.version>
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <maven-resources-plugin.version>2.7</maven-resources-plugin.version>
+        <maven-deploy-plugin.version>2.7</maven-deploy-plugin.version>
+        <maven-set-plugin.version>3.3</maven-set-plugin.version>
+        <mybatis-generator-maven-plugin.version>1.3.5</mybatis-generator-maven-plugin.version>
+
+    </properties>
+
+
+    <build>
+        <finalName>simple-spring</finalName>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${maven-source.version}</source>
+                    <target>${maven-target.version}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven-deploy-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>${maven-set-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>${maven-resources-plugin.version}</version>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+</project>
