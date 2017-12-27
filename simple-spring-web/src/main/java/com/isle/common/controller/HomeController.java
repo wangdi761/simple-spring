@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/")
 public class HomeController {
 
-
+    /**
+     * 进入主页面
+     * @param model
+     * @return
+     */
     @RequestMapping(method = RequestMethod.GET)
     public String home(Model model) {
         return "home";
