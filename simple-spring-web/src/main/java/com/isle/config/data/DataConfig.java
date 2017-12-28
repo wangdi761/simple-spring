@@ -1,6 +1,8 @@
 package com.isle.config.data;
 
+import com.github.pagehelper.PageInterceptor;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import org.apache.ibatis.plugin.Interceptor;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.beans.PropertyVetoException;
 import java.io.IOException;
+import java.util.Properties;
 
 /**
  * 配置数据源
@@ -69,6 +72,13 @@ public class DataConfig {
         sqlSessionFactory.setMapperLocations(
                 new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml")
         );
+        //配置分页插件
+        PageInterceptor pageInterceptor = new PageInterceptor();
+        Properties properties = new Properties();
+        properties.setProperty("reasonable", "true");
+        properties.setProperty("pageSizeZero", "true");
+        pageInterceptor.setProperties(properties);
+        sqlSessionFactory.setPlugins(new Interceptor[]{pageInterceptor});
         return sqlSessionFactory;
     }
 

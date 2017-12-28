@@ -131,6 +131,12 @@
             <version>${c3p0.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>${pagehelper.version}</version>
+        </dependency>
+
     </dependencies>
     <build>
         <finalName>simple-spring-web</finalName>
