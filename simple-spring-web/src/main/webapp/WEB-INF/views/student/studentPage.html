@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户列表</title>
+    <script th:src="@{/static/easyui/jquery.min.js}"/>
+    <script th:src="@{/static/easyui/jquery.easyui.min.js}"/>
+    <script th:src="@{/static/easyui/locale/easyui-lang-zh_CN.js}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/static/easyui/themes/default/easyui.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/static/easyui/themes/icon.css}" />
+</head>
+<body>
+<table class="easyui-datagrid" id="itemList" title="用户列表"
+       data-options="singleSelect:false,collapsible:true,pagination:false,
+    url:'/student/findStudents',method:'get'">
+    <thead>
+    <tr>
+        <th data-options="field:'id',hidden:true">学生id</th>
+        <th data-options="field:'name',width:200">姓名</th>
+        <th data-options="field:'age',width:100">年龄</th>
+        <th data-options="field:'email',width:100">邮箱</th>
+        <th data-options="field:'math',width:100">数学</th>
+        <th data-options="field:'chinese',width:100">语文</th>
+        <th data-options="field:'english',width:100">英语</th>
+        <th data-options="field:'country',width:100">国家</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>
